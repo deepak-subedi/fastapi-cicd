@@ -20,7 +20,7 @@ jobs:
       run: echo "${{ secrets.Docker_Token }}" | docker login -u "${{ secrets.Docker_Username}}" --password-stdin
 
     - name: Build Docker image
-      run: docker build -t deepaksubedi311/fastapi-app:latest .
+      run: docker build -t "${{ secrets.Docker_Username}}"/fastapi-app:latest .
 
     - name: Push Docker image
-      run: docker push deepaksubedi311/fastapi-app:latest
+      run: docker push "${{ secrets.Docker_Username}}"/fastapi-app:latest

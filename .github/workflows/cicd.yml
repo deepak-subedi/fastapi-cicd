@@ -2,6 +2,7 @@ name: CI/CD Pipeline updated
 
 on:
   pull_request:
+    types: [closed]
     branches:
       - main # trigger pipeline on push to main branch
 
